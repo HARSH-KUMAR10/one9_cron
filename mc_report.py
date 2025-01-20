@@ -1,11 +1,15 @@
 import requests
-
-# Define the URL with query parameters
-url = f"https://one9-mc.onrender.com/api/expense/stats/report?startDate=2025-01-01&endDate=2025-01-19&frequency=weekly"
+from datetime import date
 
 try:
     print('Sending request.')
+    today = date.today()
+    startDate = today.year+'-'+(today.month-1)+'-28'
+    frequency = 'weekly'
+    if(today.day==7 or today.day==14):
+        frequency='daily'
     # Make the GET request
+    url = f"https://one9-mc.onrender.com/api/expense/stats/report?startDate={startDate}&endDate={today}&frequency={frequency}"
     response = requests.get(url)
 
     # Raise an exception for HTTP errors
