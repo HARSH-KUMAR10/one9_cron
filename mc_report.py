@@ -4,7 +4,7 @@ from datetime import date
 try:
     print('Sending request.')
     today = date.today()
-    startDate = today.year+'-'+(today.month-1)+'-28'
+    startDate = f"{today.year}-{today.month - 1}-28"
     frequency = 'weekly'
     if(today.day==7 or today.day==14):
         frequency='daily'
