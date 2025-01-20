@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # Run on the 28th, 29th, 30th, and 31st of every month at midnight
-    - cron: "0 0 4 7,14,21,28 * ? *"
+    - cron: "15 5 7,14,21,28 * *"
 
 jobs:
   run-expense-report:
