@@ -1,6 +1,7 @@
 name: Expense Summary Report
 
 on:
+  workflow_dispatch:
   schedule:
     # Run on the 28th, 29th, 30th, and 31st of every month at midnight
     - cron: "0 */2 * * *"
