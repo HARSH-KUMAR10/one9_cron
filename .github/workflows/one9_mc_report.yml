@@ -1,0 +1,25 @@
+name: Expense Summary Report
+
+on:
+  schedule:
+    # Run on the 28th, 29th, 30th, and 31st of every month at midnight
+    - cron: "0 */2 * ? * *"
+
+jobs:
+  run-expense-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+
+      # Step 1: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      # Step 2: Run the Python script
+      - name: Run Python script
+        run: |
+          python mc_report.py
