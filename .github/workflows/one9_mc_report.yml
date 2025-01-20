@@ -20,6 +20,10 @@ jobs:
         with:
           python-version: "3.x"
 
+    steps:
+      - name: Install Dependencies
+      run: pip install -r requirements.txt
+
       # Step 2: Run the Python script
       - name: Run Python script
         run: |
