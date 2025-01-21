@@ -10,7 +10,7 @@ try:
     else:
         startDate = f"{today.year}-{today.month-1}-28"
     frequency = 'weekly'
-    if(today.day==7 or today.day==14):
+    if(today.day<17):
         frequency='daily'
     # Make the GET request
     url = f"https://one9-mc.onrender.com/api/expense/stats/report?startDate={startDate}&endDate={today}&frequency={frequency}"

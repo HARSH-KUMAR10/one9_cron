@@ -3,8 +3,8 @@ name: Expense Summary Report
 on:
   workflow_dispatch:
   schedule:
-    # Run on the 28th, 29th, 30th, and 31st of every month at midnight
-    - cron: "15 5 7,14,21,28 * *"
+    # Run on the 4,10,16,22,28th of every month at midnight
+    - cron: "30 0 4,10,16,22,28 * *"
 
 jobs:
   run-expense-report:
